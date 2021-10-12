@@ -1,9 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Net6WepApp;
 using Xunit;
@@ -26,6 +26,11 @@ namespace Test.Net6WepApp
             var application = new WebApplicationFactory<Program>()
                 .WithWebHostBuilder(builder =>
                 {
+                    builder.ConfigureServices(services =>
+                    {
+                        services.RemoveAll<ILoggerFactory>();
+                    });
+
                     builder.ConfigureLogging(logBuilder =>
                     {
                         logBuilder
