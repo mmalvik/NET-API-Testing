@@ -41,5 +41,17 @@ namespace Test.Net6WepApp
 
             Assert.NotEmpty(response);
         }
+
+        [Fact]
+        public async Task ShouldGetWeatherForecastWithCustomWebAppFactory()
+        {
+            var application = new WeatherForecastAppFactory(_testOutputHelper);
+
+            var client = application.CreateClient();
+
+            var response = await client.GetFromJsonAsync<IEnumerable<WeatherForecast>>("/weatherforecast");
+
+            Assert.NotEmpty(response);
+        }
     }
 }
