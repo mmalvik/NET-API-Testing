@@ -4,13 +4,13 @@ using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 // Commenting out UseSerilog makes test output in xUnit work
-//builder.Host.UseSerilog((hostingContext, loggerConfiguration) =>
-//{
-//    loggerConfiguration
-//        .Enrich.FromLogContext()
-//        .WriteTo.Console()
-//        .ReadFrom.Configuration(hostingContext.Configuration);
-//});
+builder.Host.UseSerilog((hostingContext, loggerConfiguration) =>
+{
+    loggerConfiguration
+        .Enrich.FromLogContext()
+        .WriteTo.Console()
+        .ReadFrom.Configuration(hostingContext.Configuration);
+});
 
 // Add services to the container.
 builder.Services.AddControllers();
