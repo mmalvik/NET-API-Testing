@@ -1,9 +1,18 @@
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Commenting out UseSerilog makes test output in xUnit work
+//builder.Host.UseSerilog((hostingContext, loggerConfiguration) =>
+//{
+//    loggerConfiguration
+//        .Enrich.FromLogContext()
+//        .WriteTo.Console()
+//        .ReadFrom.Configuration(hostingContext.Configuration);
+//});
 
+// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {

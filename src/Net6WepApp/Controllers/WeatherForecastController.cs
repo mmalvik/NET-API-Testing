@@ -9,7 +9,7 @@ namespace Net6WepApp.Controllers
         private static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        };
 
         private readonly ILogger<WeatherForecastController> _logger;
 
@@ -21,7 +21,7 @@ namespace Net6WepApp.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            _logger.LogInformation("Getting some weather forecast using .NET 6");
+            _logger.LogInformation("Getting weather forecast using .NET 6");
 
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
