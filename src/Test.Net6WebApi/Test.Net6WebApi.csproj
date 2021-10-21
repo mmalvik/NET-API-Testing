@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Net6WepApp\Net6WebApi.csproj" />
+    <ProjectReference Include="..\Net6WebApi\Net6WebApi.csproj" />
   </ItemGroup>
 
 </Project>
