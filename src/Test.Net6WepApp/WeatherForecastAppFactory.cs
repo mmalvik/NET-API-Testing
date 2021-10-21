@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 
@@ -14,18 +15,18 @@ internal class WeatherForecastAppFactory : WebApplicationFactory<Program>
         _testOutputHelper = testOutputHelper;
     }
 
-    protected override IHostBuilder? CreateHostBuilder()
+    protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
-        var builder = Host.CreateDefaultBuilder();
-        builder
-            .ConfigureLogging(logBuilder =>
-            {
-                logBuilder
-                    .SetMinimumLevel(LogLevel.Information)
-                    .ClearProviders()
-                    .AddProvider(new XunitLoggerProvider(_testOutputHelper));
-            });
-
-        return builder;
+        builder.ConfigureServices(services =>
+        {
+            services.RemoveAll<ILoggerFactory>();
+        });
+        builder.ConfigureLogging(logBuilder =>
+        {
+            logBuilder
+                .SetMinimumLevel(LogLevel.Information)
+                .ClearProviders()
+                .AddProvider(new XunitLoggerProvider(_testOutputHelper));
+        });
     }
 }
