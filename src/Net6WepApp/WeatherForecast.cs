@@ -1,4 +1,4 @@
-namespace Net6WepApp
+namespace Net6WebApi
 {
     public class WeatherForecast
     {

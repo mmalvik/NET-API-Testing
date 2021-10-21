@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net6WepApp", "Net6WepApp\Net6WepApp.csproj", "{C0F708DA-B56D-4658-AC3B-D0E7DFDF5FC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net6WebApi", "Net6WepApp\Net6WebApi.csproj", "{C0F708DA-B56D-4658-AC3B-D0E7DFDF5FC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Net6WepApp", "Test.Net6WepApp\Test.Net6WepApp.csproj", "{FFBBD65E-5C46-4240-A9E5-84EC797D7081}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Net6WebApi", "Test.Net6WepApp\Test.Net6WebApi.csproj", "{FFBBD65E-5C46-4240-A9E5-84EC797D7081}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

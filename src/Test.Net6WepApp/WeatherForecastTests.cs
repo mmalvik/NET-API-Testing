@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
-using Net6WepApp;
+using Net6WebApi;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Test.Net6WepApp
+namespace Test.Net6WebApi
 {
     public class WeatherForecastTests
     {

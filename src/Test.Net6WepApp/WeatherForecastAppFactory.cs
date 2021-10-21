@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 
-namespace Test.Net6WepApp;
+namespace Test.Net6WebApi;
 
 internal class WeatherForecastAppFactory : WebApplicationFactory<Program>
 {

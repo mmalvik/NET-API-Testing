@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 
-namespace Test.Net6WepApp
+namespace Test.Net6WebApi
 {
     /// <summary>
     /// A logger that logs to the xUnit test output.

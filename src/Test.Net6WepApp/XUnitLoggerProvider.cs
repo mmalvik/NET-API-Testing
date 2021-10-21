@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 
-namespace Test.Net6WepApp
+namespace Test.Net6WebApi
 {
     public class XunitLoggerProvider : ILoggerProvider
     {

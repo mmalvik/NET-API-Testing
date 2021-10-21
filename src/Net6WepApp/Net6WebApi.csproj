@@ -12,6 +12,6 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="Test.Net6WepApp" />
+		<InternalsVisibleTo Include="Test.Net6WebApi" />
 	</ItemGroup>
 </Project>
