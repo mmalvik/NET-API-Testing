@@ -1,3 +1,5 @@
+using System;
+
 namespace Net6WebApi
 {
     public class WeatherForecast
