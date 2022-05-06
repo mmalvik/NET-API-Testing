@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
+using Test.Net6WebApi.xUnit;
 using Xunit.Abstractions;
 
 namespace Test.Net6WebApi;
