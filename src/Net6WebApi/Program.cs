@@ -1,4 +1,5 @@
 using Microsoft.OpenApi.Models;
+using Net6WebApi.Services;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,8 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "Net6WepApp", Version = "v1" });
 });
+
+builder.Services.AddTransient<IWeatherService, WeatherService>();
 
 var app = builder.Build();
 
