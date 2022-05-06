@@ -19,7 +19,7 @@ namespace Net6WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] int count)
         {
-            _logger.LogInformation("Begin - Getting weather forecast using .NET 6");
+            _logger.LogInformation("Begin - Getting weather forecast");
 
             if (count == default || count > 100)
             {
@@ -29,7 +29,7 @@ namespace Net6WebApi.Controllers
 
             var weatherForecasts = await _weatherService.Get(count);
 
-            _logger.LogInformation("End - Getting weather forecast using .NET 6");
+            _logger.LogInformation("End - Getting weather forecast");
             return Ok(weatherForecasts);
         }
     }

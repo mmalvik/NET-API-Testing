@@ -8,13 +8,16 @@ using Microsoft.Extensions.Logging;
 using Test.Net6WebApi.xUnit;
 using Xunit.Abstractions;
 
-namespace Test.Net6WebApi;
+namespace Test.Net6WebApi.Infrastructure;
 
-internal class AppFactory : WebApplicationFactory<Program>
+/// <summary>
+/// A custom WebApplicationFactory with built-in logging to test output.
+/// </summary>
+internal class WeatherForecastAppFactory : WebApplicationFactory<Program>
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    internal AppFactory(ITestOutputHelper testOutputHelper)
+    internal WeatherForecastAppFactory(ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }

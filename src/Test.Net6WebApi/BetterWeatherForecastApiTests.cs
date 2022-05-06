@@ -8,16 +8,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Net6WebApi;
 using Net6WebApi.Repositories;
+using Test.Net6WebApi.Infrastructure;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace Test.Net6WebApi;
 
-public class BetterWeatherForecastTests : TestBase
+public class BetterWeatherForecastApiTests : ApiTestBase
 {
     private readonly Mock<IWeatherRepository> _weatherRepositoryMock;
 
-    public BetterWeatherForecastTests(ITestOutputHelper testOutputHelper) : base(testOutputHelper)
+    public BetterWeatherForecastApiTests(ITestOutputHelper testOutputHelper) : base(testOutputHelper)
     {
         _weatherRepositoryMock = new Mock<IWeatherRepository>();
     }

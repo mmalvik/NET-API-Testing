@@ -5,22 +5,25 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit.Abstractions;
 
-namespace Test.Net6WebApi;
+namespace Test.Net6WebApi.Infrastructure;
 
-public class TestBase
+/// <summary>
+/// A test base class for handling cross cutting concerns.
+/// </summary>
+public class ApiTestBase
 {
-    private readonly AppFactory _appFactory;
+    private readonly WeatherForecastAppFactory _weatherForecastAppFactory;
     private HttpClient _httpClient;
 
-    public TestBase(ITestOutputHelper testOutputHelper)
+    public ApiTestBase(ITestOutputHelper testOutputHelper)
     {
-        _appFactory = new AppFactory(testOutputHelper);
+        _weatherForecastAppFactory = new WeatherForecastAppFactory(testOutputHelper);
     }
 
     protected void ConfigureTestServices(Action<IServiceCollection> serviceCollectionAction)
     {
         EnsureTestServerNotRunning();
-        _appFactory.ConfigureTestServices = serviceCollectionAction;
+        _weatherForecastAppFactory.ConfigureTestServices = serviceCollectionAction;
     }
 
     protected async Task<T> Get<T>(string url)
@@ -33,6 +36,9 @@ public class TestBase
         return await Client.GetAsync(url);
     }
 
+    /// <remarks>
+    /// _weatherForecastAppFactory.CreateClient() actually starts the test server.
+    /// </remarks>
     private HttpClient Client
     {
         get
@@ -41,7 +47,7 @@ public class TestBase
             {
                 return _httpClient;
             }
-            _httpClient = _appFactory.CreateClient();
+            _httpClient = _weatherForecastAppFactory.CreateClient();
             return _httpClient;
         }
     }
