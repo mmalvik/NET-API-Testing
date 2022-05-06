@@ -7,11 +7,11 @@ using Xunit.Abstractions;
 
 namespace Test.Net6WebApi;
 
-internal class WeatherForecastAppFactory : WebApplicationFactory<Program>
+internal class AppFactory : WebApplicationFactory<Program>
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    internal WeatherForecastAppFactory(ITestOutputHelper testOutputHelper)
+    internal AppFactory(ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }

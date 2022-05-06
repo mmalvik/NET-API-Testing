@@ -51,7 +51,7 @@ namespace Test.Net6WebApi
         [Fact]
         public async Task ShouldGetWeatherForecastWithCustomWebAppFactory()
         {
-            var application = new WeatherForecastAppFactory(_testOutputHelper);
+            var application = new AppFactory(_testOutputHelper);
 
             var client = application.CreateClient();
 
