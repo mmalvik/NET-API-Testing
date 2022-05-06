@@ -17,11 +17,20 @@ namespace Net6WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<WeatherForecast>> Get()
+        public async Task<IActionResult> Get([FromQuery] int count)
         {
-            _logger.LogInformation("Getting weather forecast using .NET 6");
+            _logger.LogInformation("Begin - Getting weather forecast using .NET 6");
 
-            return await _weatherService.Get();
+            if (count == default || count > 100)
+            {
+                _logger.LogError("Invalid count of {Count} provided", count);
+                return BadRequest();
+            }
+
+            var weatherForecasts = await _weatherService.Get(count);
+
+            _logger.LogInformation("End - Getting weather forecast using .NET 6");
+            return Ok(weatherForecasts);
         }
     }
 }

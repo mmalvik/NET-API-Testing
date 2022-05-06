@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
+using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.DependencyInjection;
+using Moq;
 using Net6WebApi;
-using Test.Net6WebApi.xUnit;
+using Net6WebApi.Repositories;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -22,42 +23,28 @@ namespace Test.Net6WebApi
         }
 
         [Fact]
-        public async Task ShouldGetWeatherForecast()
+        public async Task WhenNoWeatherForecasts_ShouldReturnEmptyList()
         {
+            var weatherRepositoryMock = new Mock<IWeatherRepository>();
+            weatherRepositoryMock.Setup(x => x.Get(It.IsAny<int>()))
+                .ReturnsAsync(new List<WeatherForecast>());
+
             var application = new WebApplicationFactory<Program>()
                 .WithWebHostBuilder(builder =>
                 {
-                    builder.ConfigureServices(services =>
+                    builder.ConfigureTestServices(services =>
                     {
-                        services.RemoveAll<ILoggerFactory>();
+                        services.AddTransient(_ => weatherRepositoryMock.Object);
                     });
 
-                    builder.ConfigureLogging(logBuilder =>
-                    {
-                        logBuilder
-                            .SetMinimumLevel(LogLevel.Information)
-                            .ClearProviders()
-                            .AddProvider(new XunitLoggerProvider(_testOutputHelper));
-                    });
                 });
 
             var client = application.CreateClient();
 
-            var response = await client.GetFromJsonAsync<IEnumerable<WeatherForecast>>("/weatherforecast");
+            var response = await client.GetFromJsonAsync<IEnumerable<WeatherForecast>>("/weatherforecast?count=10");
 
-            Assert.NotEmpty(response);
-        }
-
-        [Fact]
-        public async Task ShouldGetWeatherForecastWithCustomWebAppFactory()
-        {
-            var application = new AppFactory(_testOutputHelper);
-
-            var client = application.CreateClient();
-
-            var response = await client.GetFromJsonAsync<IEnumerable<WeatherForecast>>("/weatherforecast");
-
-            Assert.NotEmpty(response);
+            response.Should().NotBeNull();
+            response.Should().BeEmpty();
         }
     }
 }

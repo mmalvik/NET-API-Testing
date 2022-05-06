@@ -13,9 +13,9 @@ public class WeatherService : IWeatherService
         _logger = logger;
     }
 
-    public async Task<IEnumerable<WeatherForecast>> Get()
+    public async Task<IEnumerable<WeatherForecast>> Get(int count)
     {
-        var forecasts = await _weatherRepository.GetAll();
+        var forecasts = await _weatherRepository.Get(count);
 
         if (forecasts.Any(weatherForecast => weatherForecast.TemperatureC < 0))
         {
