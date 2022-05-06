@@ -1,30 +1,29 @@
-﻿namespace Net6WebApi.Services;
+﻿using Net6WebApi.Repositories;
+
+namespace Net6WebApi.Services;
 
 public class WeatherService : IWeatherService
 {
+    private readonly IWeatherRepository _weatherRepository;
     private readonly ILogger<WeatherService> _logger;
 
-    private static readonly string[] Summaries = new[]
+    public WeatherService(IWeatherRepository weatherRepository, ILogger<WeatherService> logger)
     {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-    public WeatherService(ILogger<WeatherService> logger)
-    {
+        _weatherRepository = weatherRepository;
         _logger = logger;
     }
 
-    public Task<IEnumerable<WeatherForecast>> Get()
+    public async Task<IEnumerable<WeatherForecast>> Get()
     {
-        var forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        var forecasts = await _weatherRepository.GetAll();
+
+        if (forecasts.Any(weatherForecast => weatherForecast.TemperatureC < 0))
         {
-            Date = DateTime.Now.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        });
+            _logger.LogWarning("Some weather data has temperature below 0");
+        }
 
         _logger.LogInformation("Got {NumberOfForecasts} WeatherForecasts from {Service}", forecasts.Count(), nameof(WeatherService));
 
-        return Task.FromResult(forecasts);
+        return forecasts;
     }
 }
