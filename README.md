@@ -21,8 +21,8 @@ Hopefully more stuff to come...
 
 The EF Core in-memory provider is NOT recommended for use in integration testing:
 
-```
-EF Core also comes with an in-memory provider. Although this provider was originally designed to support internal testing of EF Core itself, some developers use it as a database fake when testing EF Core applications. Doing so is highly discouraged.
-```
+
+> EF Core also comes with an in-memory provider. Although this provider was originally designed to support internal testing of EF Core itself, some developers use it as a database fake when testing EF Core applications. Doing so is highly discouraged.
+
 
 Source: https://docs.microsoft.com/en-us/ef/core/testing/choosing-a-testing-strategy#in-memory-as-a-database-fake
