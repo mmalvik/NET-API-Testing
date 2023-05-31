@@ -1,11 +1,10 @@
-using Microsoft.OpenApi.Models;
+using Net6WebApi.Middleware;
 using Net6WebApi.Repositories;
 using Net6WebApi.Services;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Commenting out UseSerilog makes test output in xUnit work
 builder.Host.UseSerilog((hostingContext, loggerConfiguration) =>
 {
     loggerConfiguration
@@ -33,6 +32,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Net6WepApp v1"));
 }
+
+app.UseMiddleware<ExceptionLoggingMiddleware>();
 
 app.UseHttpsRedirection();
 

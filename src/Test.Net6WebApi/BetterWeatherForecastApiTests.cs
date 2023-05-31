@@ -32,9 +32,9 @@ public class BetterWeatherForecastApiTests : ApiTestBase
     }
 
     [Fact]
-    public async Task WhenCountIsProvided_ShouldReturn200Ok()
+    public async Task WhenCountNotANumber_ShouldReturnBadRequest()
     {
-        var response = await Get("/weatherforecast?count=10");
+        var response = await Get("/weatherforecast?count=hello");
 
         response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
     }
@@ -71,8 +71,7 @@ public class BetterWeatherForecastApiTests : ApiTestBase
             });
     }
 
-    private static readonly string[] Summaries = new[]
-    {
+    private static readonly string[] Summaries = {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 }
