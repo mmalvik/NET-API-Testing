@@ -39,6 +39,12 @@ bld/
 # Visual Studio 2017 auto generated files
 Generated\ Files/
 
+# Rider files
+.idea/
+
+# Finder file on Mac
+.DS_Store
+
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
