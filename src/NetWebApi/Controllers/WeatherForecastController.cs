@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Net6WebApi.Services;
+using NetWebApi.Services;
 
-namespace Net6WebApi.Controllers
+namespace NetWebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

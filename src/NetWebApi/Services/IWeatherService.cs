@@ -1,4 +1,4 @@
-﻿namespace Net6WebApi.Services;
+﻿namespace NetWebApi.Services;
 
 public interface IWeatherService
 {

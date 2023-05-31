@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
-using Net6WebApi;
-using Net6WebApi.Repositories;
-using Test.Net6WebApi.Infrastructure;
+using NetWebApi;
+using NetWebApi.Repositories;
+using Test.NetWebApi.Infrastructure;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Test.Net6WebApi;
+namespace Test.NetWebApi;
 
 public class BetterWeatherForecastApiTests : ApiTestBase
 {

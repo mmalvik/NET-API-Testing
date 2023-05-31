@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using Test.Net6WebApi.xUnit;
 using Xunit.Abstractions;
 
-namespace Test.Net6WebApi.Infrastructure;
+namespace Test.NetWebApi.Infrastructure;
 
 /// <summary>
 /// A custom WebApplicationFactory with built-in logging to test output.

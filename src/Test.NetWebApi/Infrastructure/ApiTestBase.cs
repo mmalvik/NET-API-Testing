@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit.Abstractions;
 
-namespace Test.Net6WebApi.Infrastructure;
+namespace Test.NetWebApi.Infrastructure;
 
 /// <summary>
 /// A test base class for handling cross cutting concerns.

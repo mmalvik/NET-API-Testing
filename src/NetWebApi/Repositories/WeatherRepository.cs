@@ -1,4 +1,4 @@
-﻿namespace Net6WebApi.Repositories;
+﻿namespace NetWebApi.Repositories;
 
 public class WeatherRepository : IWeatherRepository
 {

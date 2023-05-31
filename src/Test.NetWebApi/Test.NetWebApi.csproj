@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Net6WebApi\Net6WebApi.csproj" />
+    <ProjectReference Include="..\NetWebApi\NetWebApi.csproj" />
   </ItemGroup>
 
 </Project>

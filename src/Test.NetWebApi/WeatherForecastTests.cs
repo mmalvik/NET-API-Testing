@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
-using Net6WebApi;
-using Net6WebApi.Repositories;
+using NetWebApi;
+using NetWebApi.Repositories;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Test.Net6WebApi
+namespace Test.NetWebApi
 {
     public class WeatherForecastTests
     {

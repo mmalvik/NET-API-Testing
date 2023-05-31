@@ -1,6 +1,6 @@
-using Net6WebApi.Middleware;
-using Net6WebApi.Repositories;
-using Net6WebApi.Services;
+using NetWebApi.Middleware;
+using NetWebApi.Repositories;
+using NetWebApi.Services;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

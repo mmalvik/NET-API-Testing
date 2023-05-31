@@ -1,6 +1,6 @@
-﻿using Net6WebApi.Repositories;
+﻿using NetWebApi.Repositories;
 
-namespace Net6WebApi.Services;
+namespace NetWebApi.Services;
 
 public class WeatherService : IWeatherService
 {

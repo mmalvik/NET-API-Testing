@@ -2,7 +2,7 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Net6WebApi.Middleware;
+namespace NetWebApi.Middleware;
 
 public class ExceptionLoggingMiddleware
 {
