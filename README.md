@@ -2,13 +2,23 @@
 
 ## Intro
 
-This is sample repo for setting up integration testing in .NET 6.
+This is sample repo for setting up API testing in .NET.
 
 It includes:
 - Mocking services
 - Getting application logs into test output by using xUnit's `ITestOutputHelper`
 
 Hopefully more stuff to come...
+
+## Setup
+
+1. Run the SQL Server compose file:
+
+```shell
+docker-compose -f docker-compose.sqlserver.yaml up
+```
+
+2. Build and run API through Visual Studio, Rider or command line.
 
 ## Resources
 

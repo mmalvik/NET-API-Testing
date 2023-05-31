@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+    sqlserver-2019:
+        image: "mcr.microsoft.com/mssql/server:2019-latest"
+        environment:
+            SA_PASSWORD: "myP@ssword123" # Password is not sensitive
+            ACCEPT_EULA: "Y"
+        ports:
+            - "9111:1433" # Remap this to avoid collision if there is an existing SQL Server running locally
+        volumes:
+            - sqlserver:/var/opt/mssql
+volumes:
+    sqlserver:
+

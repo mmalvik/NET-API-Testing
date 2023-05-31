@@ -1,3 +1,6 @@
+using DataLayer;
+using Microsoft.EntityFrameworkCore;
+using NetWebApi.Extensions;
 using NetWebApi.Middleware;
 using NetWebApi.Repositories;
 using NetWebApi.Services;
@@ -17,14 +20,20 @@ builder.Host.UseSerilog((hostingContext, loggerConfiguration) =>
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { Title = "Net6WepApp", Version = "v1" });
+    c.SwaggerDoc("v1", new() { Title = "NetWepApi", Version = "v1" });
 });
 
+builder.Services.AddDbContext<WeatherForecastContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WeatherForecasts"));
+});
 
 builder.Services.AddTransient<IWeatherService, WeatherService>();
 builder.Services.AddTransient<IWeatherRepository, WeatherRepository>();
 
 var app = builder.Build();
+
+app.UseDatabase<WeatherForecastContext>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

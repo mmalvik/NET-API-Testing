@@ -14,4 +14,8 @@
 	<ItemGroup>
 		<InternalsVisibleTo Include="Test.NetWebApi" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+	</ItemGroup>
 </Project>
