@@ -26,20 +26,20 @@ internal class WeatherForecastAppFactory : WebApplicationFactory<Program>
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
-        //builder.ConfigureServices(services =>
-        //{
-        //    services.RemoveAll<ILoggerFactory>();
-        //});
+        builder.ConfigureServices(services =>
+        {
+            services.RemoveAll<ILoggerFactory>();
+        });
         builder.ConfigureTestServices(services =>
         {
             ConfigureTestServices?.Invoke(services);
         });
-        //builder.ConfigureLogging(logBuilder =>
-        //{
-        //    logBuilder
-        //        .SetMinimumLevel(LogLevel.Information)
-        //        .ClearProviders()
-        //        .AddProvider(new XunitLoggerProvider(_testOutputHelper));
-        //});
+        builder.ConfigureLogging(logBuilder =>
+        {
+            logBuilder
+                .SetMinimumLevel(LogLevel.Information)
+                .ClearProviders()
+                .AddProvider(new XunitLoggerProvider(_testOutputHelper));
+        });
     }
 }
