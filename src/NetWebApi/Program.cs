@@ -20,7 +20,7 @@ builder.Host.UseSerilog((hostingContext, loggerConfiguration) =>
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { Title = "NetWepApi", Version = "v1" });
+    c.SwaggerDoc("v1", new() { Title = "NetWebApi", Version = "v1" });
 });
 
 builder.Services.AddDbContext<WeatherForecastContext>(options =>
