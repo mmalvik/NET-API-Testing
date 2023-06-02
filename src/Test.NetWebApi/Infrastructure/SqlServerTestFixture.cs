@@ -6,7 +6,7 @@ using Xunit;
 namespace Test.NetWebApi.Infrastructure;
 
 /// <summary>
-/// A test fixture running SQL Server in a container.
+/// A shared test fixture running SQL Server in a container.
 /// </summary>
 public class SqlServerTestFixture : IAsyncLifetime
 {

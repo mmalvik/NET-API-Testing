@@ -13,7 +13,7 @@ namespace Test.NetWebApi.Infrastructure;
 /// </summary>
 /// <remarks>
 /// Most of this is duplicated from <see cref="ApiTestBase"/> but this class also starts a test database.
-/// This is just for demonstration purposes. In a real project you would probably use a real database.
+/// Having two test base classes is just for demonstration purposes.
 /// </remarks>
 [Collection(nameof(ApiTestCollection))]
 public class ApiTestBaseWithDatabase
@@ -21,7 +21,8 @@ public class ApiTestBaseWithDatabase
     private readonly WeatherForecastAppFactory _weatherForecastAppFactory;
     private HttpClient _httpClient;
 
-    public ApiTestBaseWithDatabase(ITestOutputHelper testOutputHelper, SqlServerTestFixture sqlServerTestFixture)
+
+    protected ApiTestBaseWithDatabase(ITestOutputHelper testOutputHelper, SqlServerTestFixture sqlServerTestFixture)
     {
         _weatherForecastAppFactory = new WeatherForecastAppFactory(testOutputHelper);
         OverrideAppsettings("ConnectionStrings:WeatherForecasts", sqlServerTestFixture.ConnectionString);
@@ -36,8 +37,8 @@ public class ApiTestBaseWithDatabase
     {
         return await Client.GetAsync(url);
     }
-    
-    protected void OverrideAppsettings(string key, string value)
+
+    private void OverrideAppsettings(string key, string value)
     {
         EnsureTestServerNotRunning();
         _weatherForecastAppFactory.OverriddenAppsettings.Add(key, value);
