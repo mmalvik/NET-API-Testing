@@ -34,4 +34,12 @@ public class BestWeatherForecastApiTests : ApiTestBaseWithDatabase
 
         response.First().Summary.Should().Be("Sunny");
     }
+    
+    [Fact]
+    public async Task WhenSixItemsRequested_ShouldReturnSixItems()
+    {
+        var response = await Get<IEnumerable<WeatherForecast>>("/weatherforecast?count=6");
+
+        response.Count().Should().Be(6);
+    }
 }

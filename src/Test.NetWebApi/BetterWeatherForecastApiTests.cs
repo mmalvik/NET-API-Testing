@@ -16,11 +16,11 @@ namespace Test.NetWebApi;
 
 public class BetterWeatherForecastApiTests : ApiTestBase
 {
-    private readonly Mock<IWeatherRepository> _weatherRepositoryMock;
+    private readonly Mock<IWeatherForecastRepository> _weatherRepositoryMock;
 
     public BetterWeatherForecastApiTests(ITestOutputHelper testOutputHelper) : base(testOutputHelper)
     {
-        _weatherRepositoryMock = new Mock<IWeatherRepository>();
+        _weatherRepositoryMock = new Mock<IWeatherForecastRepository>();
     }
 
     [Fact]

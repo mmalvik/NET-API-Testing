@@ -25,7 +25,7 @@ namespace Test.NetWebApi
         [Fact]
         public async Task WhenNoWeatherForecasts_ShouldReturnEmptyList()
         {
-            var weatherRepositoryMock = new Mock<IWeatherRepository>();
+            var weatherRepositoryMock = new Mock<IWeatherForecastRepository>();
             weatherRepositoryMock.Setup(x => x.Get(It.IsAny<int>()))
                 .ReturnsAsync(new List<WeatherForecast>());
 

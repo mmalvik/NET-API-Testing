@@ -7,12 +7,12 @@ namespace NetWebApi.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private readonly IWeatherService _weatherService;
+        private readonly IWeatherForecastService _weatherForecastService;
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(IWeatherService weatherService, ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(IWeatherForecastService weatherForecastService, ILogger<WeatherForecastController> logger)
         {
-            _weatherService = weatherService;
+            _weatherForecastService = weatherForecastService;
             _logger = logger;
         }
 
@@ -27,7 +27,7 @@ namespace NetWebApi.Controllers
                 return BadRequest();
             }
 
-            var weatherForecasts = await _weatherService.Get(count);
+            var weatherForecasts = await _weatherForecastService.Get(count);
 
             _logger.LogInformation("End - Getting weather forecast");
             return Ok(weatherForecasts);

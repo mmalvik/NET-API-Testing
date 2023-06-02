@@ -28,8 +28,8 @@ builder.Services.AddDbContext<WeatherForecastContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("WeatherForecasts"));
 });
 
-builder.Services.AddTransient<IWeatherService, WeatherService>();
-builder.Services.AddTransient<IWeatherRepository, WeatherRepository>();
+builder.Services.AddTransient<IWeatherForecastService, WeatherForecastService>();
+builder.Services.AddTransient<IWeatherForecastRepository, WeatherForecastRepository>();
 
 var app = builder.Build();
 

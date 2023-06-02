@@ -1,6 +1,0 @@
-﻿namespace NetWebApi.Services;
-
-public interface IWeatherService
-{
-    Task<IEnumerable<WeatherForecast>> Get(int count);
-}
