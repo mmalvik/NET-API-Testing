@@ -2,13 +2,13 @@
 
 ## Intro
 
-This is sample repo for setting up API testing in .NET.
+This is a sample repo for setting up API testing in .NET.
 
 It includes:
-- Mocking services
+- Demonstrating mocking services
 - Getting application logs into test output by using xUnit's `ITestOutputHelper`
+- Using Testcontainers to run tests against a real SQL Server
 
-Hopefully more stuff to come...
 
 ## Setup
 
@@ -24,6 +24,7 @@ docker-compose -f docker-compose.sqlserver.yaml up
 
 - [Docs: Integration tests in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-6.0)
 - [David Fowler's gist](https://gist.github.com/davidfowl/0e0372c3c1d895c3ce195ba983b1e03d#testing-with-webapplicationfactorytestserver)
+- [What is Testcontainers, and why should you use it?](https://testcontainers.com/guides/introducing-testcontainers/)
 
 ## Notes
 

@@ -56,10 +56,9 @@ public class BetterWeatherForecastApiTests : ApiTestBase
     }
 
     /// <summary>
-    /// Return fake weather forecasts.
+    /// Returns fake weather forecasts.
     /// </summary>
     /// <param name="count">The number of items to return</param>
-    /// <returns></returns>
     private IEnumerable<WeatherForecast> GetFakeData(int count)
     {
         return Enumerable.Range(count, count)
