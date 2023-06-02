@@ -12,6 +12,8 @@ It includes:
 
 ## Setup
 
+### Running the API
+
 1. Run the SQL Server compose file:
 
 ```shell
@@ -19,6 +21,12 @@ docker-compose -f docker-compose.sqlserver.yaml up
 ```
 
 2. Build and run API through Visual Studio, Rider or command line.
+
+### Running the tests
+
+1. Make sure you have Docker running.
+
+2. Run the tests
 
 ## Resources
 
