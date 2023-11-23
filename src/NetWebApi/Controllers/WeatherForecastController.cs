@@ -5,16 +5,12 @@ namespace NetWebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherForecastController(IWeatherForecastService weatherForecastService,
+            ILogger<WeatherForecastController> logger)
+        : ControllerBase
     {
-        private readonly IWeatherForecastService _weatherForecastService;
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(IWeatherForecastService weatherForecastService, ILogger<WeatherForecastController> logger)
-        {
-            _weatherForecastService = weatherForecastService;
-            _logger = logger;
-        }
+        private readonly IWeatherForecastService _weatherForecastService = weatherForecastService;
+        private readonly ILogger<WeatherForecastController> _logger = logger;
 
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] int count)

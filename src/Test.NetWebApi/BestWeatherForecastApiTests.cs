@@ -10,7 +10,6 @@ using Xunit.Abstractions;
 
 namespace Test.NetWebApi;
 
-
 public class BestWeatherForecastApiTests : ApiTestBaseWithDatabase
 {
     public BestWeatherForecastApiTests(ITestOutputHelper testOutputHelper, SqlServerTestFixture sqlServerTestFixture) : base(testOutputHelper, sqlServerTestFixture)
@@ -18,11 +17,11 @@ public class BestWeatherForecastApiTests : ApiTestBaseWithDatabase
     }
     
     [Fact]
-    public async Task WhenCountIsProvided_ShouldReturnCorrectNumberOfItems()
+    public async Task WhenCountIsNotProvided_ShouldReturnBadRequest()
     {
-        var response = await Get($"/weatherforecast?count=5");
+        var response = await Get($"/weatherforecast");
 
-        response.StatusCode.Should().Be(HttpStatusCode.OK);
+        response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
     }
     
     [Fact]
@@ -38,8 +37,10 @@ public class BestWeatherForecastApiTests : ApiTestBaseWithDatabase
     [Fact]
     public async Task WhenSixItemsRequested_ShouldReturnSixItems()
     {
-        var response = await Get<IEnumerable<WeatherForecast>>("/weatherforecast?count=6");
+        var numberOfItems = 6;
+        
+        var response = await Get<IEnumerable<WeatherForecast>>($"/weatherforecast?count={ numberOfItems }");
 
-        response.Count().Should().Be(6);
+        response.Count().Should().Be(numberOfItems);
     }
 }
