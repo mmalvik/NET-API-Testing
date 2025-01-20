@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using NetWebApi;
 using Test.NetWebApi.Infrastructure;
+using Test.Shared;
 using Xunit;
 using Xunit.Abstractions;
 

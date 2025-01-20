@@ -1,9 +1,7 @@
-using System;
-using System.Threading.Tasks;
 using Testcontainers.MsSql;
 using Xunit;
 
-namespace Test.NetWebApi.Infrastructure;
+namespace Test.Shared;
 
 /// <summary>
 /// A shared test fixture running SQL Server in a container.

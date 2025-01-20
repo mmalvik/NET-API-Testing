@@ -1,3 +1,4 @@
+using Test.Shared;
 using Xunit;
 
 namespace Test.NetWebApi.Infrastructure;

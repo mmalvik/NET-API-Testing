@@ -927,11 +927,6 @@
           "System.Drawing.Common": "6.0.0"
         }
       },
-      "xunit.abstractions": {
-        "type": "Transitive",
-        "resolved": "2.0.3",
-        "contentHash": "pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg=="
-      },
       "xunit.analyzers": {
         "type": "Transitive",
         "resolved": "1.18.0",
@@ -971,6 +966,15 @@
           "DataLayer": "[1.0.0, )",
           "Serilog.AspNetCore": "[8.0.3, )",
           "Swashbuckle.AspNetCore": "[6.7.3, )"
+        }
+      },
+      "test.shared": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "[8.0.2, )",
+          "Testcontainers.MsSql": "[4.0.0, )",
+          "xunit.abstractions": "[2.0.3, )",
+          "xunit.extensibility.core": "[2.9.3, )"
         }
       },
       "Microsoft.EntityFrameworkCore.SqlServer": {
@@ -1030,6 +1034,12 @@
           "SSH.NET": "2023.0.0",
           "SharpZipLib": "1.4.2"
         }
+      },
+      "xunit.abstractions": {
+        "type": "CentralTransitive",
+        "requested": "[2.0.3, )",
+        "resolved": "2.0.3",
+        "contentHash": "pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg=="
       }
     }
   }
