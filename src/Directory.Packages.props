@@ -1,0 +1,34 @@
+<!--Central package management -->
+<!--  https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management -->
+<!--  https://github.com/NuGet/Home/wiki/Centrally-managing-NuGet-package-versions -->
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- General use packages -->
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.12" />
+    <PackageVersion Include="Serilog.AspNetCore" Version="8.0.3" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.7.3" />
+    <PackageVersion Include="System.Text.Json" Version="8.0.5" />
+    
+    <!-- Testing packages -->
+    <PackageVersion Include="coverlet.collector" Version="6.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageVersion>
+    <PackageVersion Include="FluentAssertions" Version="7.1.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.12" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageVersion Include="Microsoft.VisualStudio.TestPlatform" Version="14.0.0" />
+    <PackageVersion Include="Moq" Version="4.18.4" />
+    <PackageVersion Include="Testcontainers" Version="4.0.0" />
+    <PackageVersion Include="Testcontainers.MsSql" Version="4.0.0" />
+    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.extensibility.core" Version="2.9.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageVersion>
+  </ItemGroup>
+</Project>

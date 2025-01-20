@@ -1,0 +1,11 @@
+<Project>
+  <PropertyGroup>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <!-- Disable Nuget fallback folder to guarantee reproducible builds.
+    https://github.com/dotnet/reproducible-builds/blob/04d0f2c7e94112642d49c82bc8f4e3da0887dbce/Documentation/Reproducible-MSBuild/Techniques/DisableImplicitNuGetFallbackFolder.md -->
+    <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+    
+    <!-- Use transitive pinning: https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management#transitive-pinning-->
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+</Project>
