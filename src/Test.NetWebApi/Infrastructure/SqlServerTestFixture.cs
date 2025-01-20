@@ -20,7 +20,7 @@ public class SqlServerTestFixture : IAsyncLifetime
         try
         {
             _mssqlContainer = new MsSqlBuilder()
-                .WithImage("mcr.microsoft.com/mssql/server:2019-latest")
+                .WithImage("mcr.microsoft.com/mssql/server:2022-latest")
                 .Build();
 
             await _mssqlContainer.StartAsync();
