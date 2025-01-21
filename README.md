@@ -9,6 +9,9 @@ It includes:
 - Getting application logs into test output by using xUnit's `ITestOutputHelper`
 - Using Testcontainers to run tests against a real SQL Server
 
+The project contains 2 different APIs and 2 different test projects
+- `NetWebApi` and `Test.NetWebApi` using the regular Microsoft provided dependency injection container
+- `NetWebApi.LightInject` and `Test.NetWebApi.LightInject` using the [LightInject](https://github.com/seesharper/LightInject/tree/master) dependency injection container
 
 ## Setup
 
@@ -17,7 +20,7 @@ It includes:
 1. Run the SQL Server compose file:
 
 ```shell
-docker-compose -f docker-compose.sqlserver.yaml up
+docker-compose up -d
 ```
 
 2. Build and run API through Visual Studio, Rider or command line.
@@ -26,7 +29,7 @@ docker-compose -f docker-compose.sqlserver.yaml up
 
 1. Make sure you have Docker running.
 
-2. Run the tests
+2. Run the tests in either `Test.NetWebApi` or `Test.NetWebApi.LightInject`
 
 ## Resources
 
