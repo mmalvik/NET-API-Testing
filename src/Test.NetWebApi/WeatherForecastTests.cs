@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using Api.Shared.Models;
+using Api.Shared.Repositories.Repositories;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using NetWebApi;
-using NetWebApi.Repositories;
 using Xunit;
 using Xunit.Abstractions;
 

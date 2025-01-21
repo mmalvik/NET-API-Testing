@@ -1,9 +1,9 @@
+using Api.Shared.Extensions;
+using Api.Shared.Middleware;
+using Api.Shared.Repositories.Repositories;
+using Api.Shared.Services.Services;
 using DataLayer;
 using Microsoft.EntityFrameworkCore;
-using NetWebApi.Extensions;
-using NetWebApi.Middleware;
-using NetWebApi.Repositories;
-using NetWebApi.Services;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,7 +1,8 @@
-﻿using DataLayer;
+﻿using Api.Shared.Models;
+using DataLayer;
 using Microsoft.EntityFrameworkCore;
 
-namespace NetWebApi.Repositories;
+namespace Api.Shared.Repositories.Repositories;
 
 public class WeatherForecastRepository : IWeatherForecastRepository
 {

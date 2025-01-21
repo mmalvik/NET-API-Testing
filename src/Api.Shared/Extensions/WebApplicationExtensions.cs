@@ -1,6 +1,9 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
-namespace NetWebApi.Extensions;
+namespace Api.Shared.Extensions;
 
 public static class WebApplicationExtensions
 {
@@ -15,7 +18,7 @@ public static class WebApplicationExtensions
             // Create the database if it does not exist
             if (context.Database.EnsureCreated())
             {
-                if (context.Database.GetPendingMigrations().Any())
+                if (Enumerable.Any<string>(context.Database.GetPendingMigrations()))
                 {
                     context.Database.Migrate();
                 }

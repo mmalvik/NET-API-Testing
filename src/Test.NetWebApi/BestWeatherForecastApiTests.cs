@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Api.Shared.Models;
 using FluentAssertions;
 using NetWebApi;
 using Test.NetWebApi.Infrastructure;
@@ -36,9 +37,9 @@ public class BestWeatherForecastApiTests : ApiTestBaseWithDatabase
     }
     
     [Fact]
-    public async Task WhenSixItemsRequested_ShouldReturnSixItems()
+    public async Task WhenFiveItemsRequested_ShouldReturnFiveItems()
     {
-        var numberOfItems = 6;
+        var numberOfItems = 5;
         
         var response = await Get<IEnumerable<WeatherForecast>>($"/weatherforecast?count={ numberOfItems }");
 

@@ -1,8 +1,10 @@
 using System.Text.Json;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
-namespace NetWebApi.Middleware;
+namespace Api.Shared.Middleware;
 
 public class ExceptionLoggingMiddleware
 {
@@ -39,7 +41,7 @@ public class ExceptionLoggingMiddleware
     }
     
     /// <summary>
-    /// Returns a serialized <see cref="ProblemDetails" /> when an unexpected error occurs.
+    /// Returns a serialized <see cref="Microsoft.AspNetCore.Mvc.ProblemDetails" /> when an unexpected error occurs.
     /// </summary>
     private async Task SetResponse(HttpContext context)
     {

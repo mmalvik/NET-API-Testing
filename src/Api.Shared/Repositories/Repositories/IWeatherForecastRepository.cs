@@ -1,4 +1,6 @@
-﻿namespace NetWebApi.Repositories;
+﻿using Api.Shared.Models;
+
+namespace Api.Shared.Repositories.Repositories;
 
 public interface IWeatherForecastRepository
 {

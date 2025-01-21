@@ -1,6 +1,8 @@
-﻿using NetWebApi.Repositories;
+﻿using Api.Shared.Models;
+using Api.Shared.Repositories.Repositories;
+using Microsoft.Extensions.Logging;
 
-namespace NetWebApi.Services;
+namespace Api.Shared.Services.Services;
 
 public class WeatherForecastService : IWeatherForecastService
 {

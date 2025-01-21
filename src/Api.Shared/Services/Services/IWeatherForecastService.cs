@@ -1,4 +1,6 @@
-﻿namespace NetWebApi.Services;
+﻿using Api.Shared.Models;
+
+namespace Api.Shared.Services.Services;
 
 public interface IWeatherForecastService
 {

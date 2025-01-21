@@ -16,6 +16,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Api.Shared\Api.Shared.csproj" />
 	  <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
 	</ItemGroup>
 </Project>
