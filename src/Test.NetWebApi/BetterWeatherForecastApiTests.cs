@@ -8,7 +8,6 @@ using Api.Shared.Repositories.Repositories;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
-using NetWebApi;
 using Test.NetWebApi.Infrastructure;
 using Xunit;
 using Xunit.Abstractions;

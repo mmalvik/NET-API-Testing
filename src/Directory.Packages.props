@@ -7,12 +7,15 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- General use packages -->
+    <PackageVersion Include="LightInject.Microsoft.Hosting" Version="1.5.3" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.12" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.12" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
     <PackageVersion Include="Serilog.AspNetCore" Version="8.0.3" />
+    <PackageVersion Include="Serilog.Extensions.Hosting" Version="8.0.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.7.3" />
     <PackageVersion Include="System.Text.Json" Version="8.0.5" />
+    
     <!-- Testing packages -->
     <PackageVersion Include="coverlet.collector" Version="6.0.4">
       <PrivateAssets>all</PrivateAssets>

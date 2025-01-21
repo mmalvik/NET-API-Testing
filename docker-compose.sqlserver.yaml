@@ -1,7 +1,6 @@
-version: "3.8"
 services:
-    sqlserver-2019:
-        image: "mcr.microsoft.com/mssql/server:2019-latest"
+    sqlserver-2022:
+        image: "mcr.microsoft.com/mssql/server:2022-latest"
         environment:
             SA_PASSWORD: "myP@ssword123" # Password is not sensitive
             ACCEPT_EULA: "Y"

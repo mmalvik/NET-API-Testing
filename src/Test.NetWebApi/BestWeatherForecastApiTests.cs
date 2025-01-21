@@ -4,7 +4,6 @@ using System.Net;
 using System.Threading.Tasks;
 using Api.Shared.Models;
 using FluentAssertions;
-using NetWebApi;
 using Test.NetWebApi.Infrastructure;
 using Test.Shared;
 using Xunit;
