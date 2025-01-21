@@ -12,6 +12,10 @@
       <PackageReference Include="Swashbuckle.AspNetCore" />
     </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="Test.NetWebApi.LightInject" />
+  </ItemGroup>
+  
     <ItemGroup>
       <ProjectReference Include="..\Api.Shared\Api.Shared.csproj" />
     </ItemGroup>
