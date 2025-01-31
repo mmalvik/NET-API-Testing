@@ -30,6 +30,7 @@ public class ApiTests : LightInjectApiTestBase
 
         var response = await Get<IEnumerable<WeatherForecast>>($"/weatherforecast?count={ numberOfItems }");
 
+        _weatherRepositoryMock.Verify(x => x.Get(numberOfItems), Times.Once);
         response.Should().HaveCount(numberOfItems);
     }
     
